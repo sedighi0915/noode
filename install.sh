@@ -83,6 +83,21 @@ services:
       - "22850:22850"
       - "1515:1515"
       - "1616:1616"
+
+  marzban-node-5:
+    image: gozargah/marzban-node:latest
+    restart: always
+    environment:
+      - SSL_CLIENT_CERT_FILE=/var/lib/marzban-node/ssl_client_cert_5.pem
+    volumes:
+      - /var/lib/marzban-node:/var/lib/marzban-node
+      - /var/lib/marzban:/var/lib/marzban
+    ports:
+      - "7000:62050"
+      - "7001:62051"
+      - "4330:4330"
+      - "6124:6124"
+      - "8891:8891"
 EOF
 
 # Create SSL client certificates
@@ -194,6 +209,33 @@ lu5cSSxYwaTb8zoxmLD+dyNR1Xlp+9fS9QEU2Vlwr4SxtpkizycdOPGjYAAiDLZT
 FaI7gwuL/SiJuUdKrktzE4zPYIL8op6X9crmzdpMBbowXlTzNzmLZWe8IjN3DQmr
 HdxfFC9CFr/GS5FpCE1S84YIpJlxb1WfJV9jeKu/Mts=
 -----END CERTIFICATE-----" > /var/lib/marzban-node/ssl_client_cert_4.pem
+echo "-----BEGIN CERTIFICATE-----
+MIIEnDCCAoQCAQAwDQYJKoZIhvcNAQENBQAwEzERMA8GA1UEAwwIR296YXJnYWgw
+IBcNMjQwODI3MTA1OTEzWhgPMjEyNDA4MDMxMDU5MTNaMBMxETAPBgNVBAMMCEdv
+emFyZ2FoMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAhJfGZxsWQU8E
+9y1XIVswAHp3IWQ8kWeGiFlEsm6bwAcw1sIFCEXSyqeNNsAzKsdCE0qgaKpYT97y
+fF/Dq3tg06Nrk61eZESQ4tb9xcq12oBWnRDZd2tBWrDCORBeFis839HTVrsfA1br
+uH3pRYuqAJ7ffdS5q+T3kbLYvXqIWdQuNX/rasUTRAB68Eh7p3dEX7JVFnIuHrNL
+VKT1lP9bP8DSZ1MgOci4qvFfMOgBJGHDxLJrDTZvh1nWzOObytru1dSxUH3eGlBh
+pHF5sFNJwKGPf0TNF+2EeWV4GJ7d/Oy3fsESi/cH/aTWD+oVFK4E80RS5Coep9TM
+Zzgqf7f0bbIQXYUDZkIWe6ymDi4bHqBkmtvJwSrAZqNve3WtvxwR6wLKbhpdYIdH
+7JSsl0ogWqMLACMphaHZgAq7xDq1js94p8n4UkdnVqJF6Pc3LRfBLM47txj6nmEG
+iK+hONeqViu4rqOMxD6JHpHocBXa7+0YyVRaujKuIEsYpSwijOqs0fiageqjtWEr
+yvn5oyTtIWhaCUrhXpaDKfl05OBM0vk3I1WVEwe9FS0n2TAlNlDbv57prUuXXsE3
+NVjcF0ahtJRR9B8VdWfSZSVv1Bb/YGa2yWPb9cyrrykB40cMRjjR9zcAb+MEBQuP
+YKv0nQ19UkUR8kAc5lfq9b0DjNnhw7MCAwEAATANBgkqhkiG9w0BAQ0FAAOCAgEA
+Ux/M69L/Qx61f/H6uQlivGWgqMLmwt1jB41iXkYMtWmU0JKB/j2vXpFayT2PlBw3
+c8YmPnAmYJvJFKG9rZPQKp0WEi6XnZKTuL01znJWpnMv40Fsqp9+amVP317Lvuyg
+MvEsM070+G/RG2bNzQM0V/85+pXBu1ltl+2u+Dp66kWrTPUTKYT8IInbaD/IuQbN
+v6UKwPd8g1AD6VxUG9Zp7d49N5kbSVCUVWsImzHP1hRLxbTuKy+bEng54ZEcd8f9
+Yi3frVM1xA8dCNhk9gYgqRUQ4UzY+IypgEL2TPLCGP99KDeG1vf8vH15KyL31Vqm
++O/bbfpF0ipCM2/4Cye6rJt0F7VgrMwEr8rpH5TUMV9NtceUlz/Za9dYGgBMs3o0
+/+PusRui3YUmV7r57TP2aDxP5wk7/CSeqD1Gjq19IO7bpSBs7UwNa3lsgp424Sxi
+q5Mg9kftc2vrc+O2Y1BLtOsnOov7QfuiV04UvA0LGYwW830BrAhxSFGSycpqDEfD
+yBcwCfFqY0p3LdOeL/gxVZDtvzlh9T/tduzoB+NaygVgcNf58we5hlbW919PEI3C
+T0mgP40C85kF+XZshd8Fn37w49m3KBa6CFXRDpGHDd0CXuSleICDttqDDwvkzt6L
+BKKw1Vzd7/vnpNtEUuuVZAVtXbthQeGqhS/Q/+aOKzU=
+-----END CERTIFICATE-----" > /var/lib/marzban-node/ssl_client_cert_5.pem
 
 # Start Docker Compose
 docker compose up -d
