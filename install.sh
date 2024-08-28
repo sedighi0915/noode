@@ -85,19 +85,20 @@ services:
       - "1616:1616"
 
   marzban-node-5:
-    image: gozargah/marzban-node:latest
-    restart: always
-    environment:
-      - SSL_CLIENT_CERT_FILE=/var/lib/marzban-node/ssl_client_cert_5.pem
-    volumes:
-      - /var/lib/marzban-node:/var/lib/marzban-node
-      - /var/lib/marzban:/var/lib/marzban
-    ports:
-      - "7000:62050"
-      - "7001:62051"
-      - "4330:4330"
-      - "6124:6124"
-      - "8891:8891"
+    image: gozargah/marzban-node:latest
+    restart: always
+    environment:
+      - SSL_CLIENT_CERT_FILE=/var/lib/marzban-node/ssl_client_cert_5.pem
+    volumes:
+      - /var/lib/marzban-node:/var/lib/marzban-node
+      - /var/lib/marzban:/var/lib/marzban
+    ports:
+      - "7000:62050"
+      - "7001:62051"
+      - "4330:4330"
+      - "6124:6124"
+      - "8891:8891"
+
 EOF
 
 # Create SSL client certificates
