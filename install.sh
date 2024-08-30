@@ -36,6 +36,8 @@ services:
       - "8032:8032"
       - "8443:8443"
       - "2030:2030"
+      - "80:80"
+      - "5560:5560"
 
   marzban-node-2:
     image: gozargah/marzban-node:latest
@@ -67,6 +69,7 @@ services:
       - "2067:2067"
       - "9785:9785"
       - "2087:2087"
+      - "5570:5570"
 
   marzban-node-4:
     image: gozargah/marzban-node:latest
@@ -82,7 +85,6 @@ services:
       - "2096:2096"
       - "22850:22850"
       - "1515:1515"
-      - "1616:1616"
 
   marzban-node-5:
     image: gozargah/marzban-node:latest
@@ -98,6 +100,7 @@ services:
       - "4330:4330"
       - "6124:6124"
       - "8891:8891"
+      - "3294:3294"
 
 EOF
 
